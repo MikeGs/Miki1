@@ -1,6 +1,8 @@
 int seleccion = 0;
 int x,y,ymove,xmove;
+int xvelocidad=0,yvelocidad=0;
 PImage[]tiles = new PImage [4];
+
 void setup() {
 size(1280,600);
 background(0,90,255);
@@ -9,8 +11,11 @@ tiles[1] = loadImage ("cesped2.png");
 tiles[2] = loadImage ("piedra.png");
 tiles[3] = loadImage ("tierra.png");
 
-xmove = 128;
-ymove = 570;
+//xmove = 127;
+//ymove = 575;
+
+xmove = 0;
+ymove = 0;
 
 }
 
@@ -45,6 +50,9 @@ void draw() {
    fill(0,180,255);
    rect(xmove,ymove,32,32);
    
+   fill(255,255,255);
+   text(map[(ymove+16)/32][(xmove+16)/32],xmove,ymove);
+   
 }
 
 void keyPressed() {
@@ -60,4 +68,8 @@ void keyPressed() {
   if (keyCode == RIGHT){
       xmove = xmove+32;
   }
+  //println("Estás en la posición: X = "+xmove/32+" Y = "+ymove/32);
+}
+
+void keyReleased() {
 }
