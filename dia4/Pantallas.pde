@@ -1,5 +1,5 @@
 void juego() {
-  //background(0,0,0);
+  background(0,0,0);
   
   /*alien.actualizar(1);
   alien2.actualizar(2);

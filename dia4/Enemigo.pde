@@ -32,21 +32,20 @@ boolean vivo=true;
     }
     }
     
-    if(dist(x,y,/*xproy*/0,/*yproy*/0)<25) {
-      if (vivo==true){
-        vida = vida-10;
-        //xproy=-300;
-        contador = contador+0;
-      }
-      if (vivo==true && vida==0) {
+    if (vivo ==true) {
+    if(s.colision(x,y) == true){
+      vida = vida-10;
+      contador = contador+0;
+    }}
+    
+    if (vivo==true && vida==0) {
         contador = contador+1;
         vivo = false;
         kill.play();
         kill.rewind();
-      }
-      if (contador==1) {
-        fb.play();
-      }
     }
-  }
-}
+    if (contador==1) {
+        fb.play();
+    }
+    
+}}
