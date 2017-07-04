@@ -29,7 +29,7 @@ class cshoot {
       boolean colision(int xshoot,int yshoot){
         for (int i=0; i<shoot.size(); i=i+1) {
         shoot_fill a = (shoot_fill) shoot.get(i);
-        if(dist (a.xshoot,a.yshoot,xshoot,yshoot)<20) {
+        if(dist (a.xshoot,a.yshoot,xshoot,yshoot)<25) {
           shoot.remove(i);
            return true;
         }

@@ -10,14 +10,15 @@ cshoot s;
 int y, w, h, velx, vely,img;
 //Enemigo alien,alien2,alien3,alien4;
 int contador=0;
-int nenemy = 6;
+int nenemy = 8;
 int restenemy;
 Enemigo []alien = new Enemigo[nenemy];
-PImage[]objects = new PImage [nenemy];
+PImage[]objects = new PImage [7];
 int xnave, ynave=300;//proy=0,yproy=0,xproy=0;
 float distancia;
 boolean reload=false;
-int tiempo = millis();
+int rel = millis();
+int anim = millis();
 int estado;
 
 void setup() {
@@ -28,6 +29,7 @@ void setup() {
   objects[3] = loadImage("nave1.png");
   objects[4] = loadImage("nave2.png");
   objects[5] = loadImage("proy.png");
+  objects[6] = loadImage("bullet.png");
   
   smooth();
   s = new cshoot();
@@ -85,13 +87,13 @@ void keyPressed() {
   if (keyCode == RIGHT){
          xnave = xnave+25;
   }
-  if (key == ' ') {
-          tiempo = millis();
+  if (key == ' ' && rel +700<millis()) {
           //proy=1;
           //xproy=xnave;
           //yproy=ynave-18;
           s.anyadir();
           disparo.play();
           disparo.rewind();
+          rel = millis();
   }
 }

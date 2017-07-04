@@ -22,7 +22,9 @@ void juego() {
   fill(255,255,255);
   text("Puntos: "+contador,xnave+25,ynave-20);
   
-  if (restenemy==0) {   
+  image(objects[6],xnave+40,ynave+25,10,30);
+  
+  if (contador==nenemy) {   
    estado = 3;
   }
   
