@@ -32,10 +32,10 @@ boolean vivo=true;
     }
     }
     
-    if(dist(x,y,xproy,yproy)<25) {
+    if(dist(x,y,/*xproy*/0,/*yproy*/0)<25) {
       if (vivo==true){
         vida = vida-10;
-        xproy=-300;
+        //xproy=-300;
         contador = contador+0;
       }
       if (vivo==true && vida==0) {

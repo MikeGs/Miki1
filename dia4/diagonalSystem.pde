@@ -26,9 +26,9 @@ class diagonalSystem {
   void anyadir() {
     color colors = color(255, 255, 255);
     float size = random(1, 15);
-    float fvel = random(0.5, 1);
-    float ancho = random(1, 20);
-    float trans = random(50, 20);
+    float fvel = random(0.5, 5);
+    float ancho = random(1, 3);
+    float trans = random(50, 255);
     
     PVector pos = new PVector(random(-200, width), random(-200, height));
     PVector pos2 = new PVector(pos.x+size, pos.y+size);

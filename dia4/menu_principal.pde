@@ -31,8 +31,7 @@ void menu() {
   
   imageMode(CENTER);
   
-  background(0,0,0);
-  //fondo();
+  //background(0,0,0);
   
   fill(255,255,255);
   rect(width/2-100,height/2-175,200,40);

@@ -1,19 +1,11 @@
-diagonalSystem ds;
+//diagonalSystem ds;
 float r1, r2, r3,n;
 
 void fondo() {
   //size(800, 600);
   smooth();
   ds = new diagonalSystem();
-} 
-
-void drawfondo() {
-  //Pintar el fondo con transparencia
-  fill(0,30);
-  noStroke();
-  rect(0, 0, width, height);
   
-  //Si hay menos de 101 objetos añadimos otro
   while(n < 90){
     ds.anyadir();
     n++;
@@ -21,4 +13,5 @@ void drawfondo() {
   
   //Actualizamos todos los objetos
   ds.actu();
-} 
+  
+}

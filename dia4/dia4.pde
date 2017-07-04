@@ -4,6 +4,8 @@ AudioPlayer disparo;
 AudioPlayer kill;
 AudioPlayer fb;
 AudioPlayer beep;
+diagonalSystem ds;
+cshoot s;
 
 int y, w, h, velx, vely,img;
 //Enemigo alien,alien2,alien3,alien4;
@@ -12,7 +14,7 @@ int nenemy = 6;
 int restenemy;
 Enemigo []alien = new Enemigo[nenemy];
 PImage[]objects = new PImage [nenemy];
-int xnave, ynave=300,proy=0,yproy=0,xproy=0;
+int xnave, ynave=300;//proy=0,yproy=0,xproy=0;
 float distancia;
 boolean reload=false;
 int tiempo = millis();
@@ -26,6 +28,10 @@ void setup() {
   objects[3] = loadImage("nave1.png");
   objects[4] = loadImage("nave2.png");
   objects[5] = loadImage("proy.png");
+  
+  smooth();
+  s = new cshoot();
+  ds = new diagonalSystem();
   
   for(int y=0;y<nenemy;y=y+1){
       alien[y] = new Enemigo(20+y*60,40,30,90);
@@ -69,6 +75,7 @@ void draw() {
   go();
   break;
   }
+  fondo();
 }
 
 void keyPressed() {
@@ -80,9 +87,10 @@ void keyPressed() {
   }
   if (key == ' ') {
           tiempo = millis();
-          proy=1;
-          xproy=xnave;
-          yproy=ynave-18;
+          //proy=1;
+          //xproy=xnave;
+          //yproy=ynave-18;
+          s.anyadir();
           disparo.play();
           disparo.rewind();
   }
